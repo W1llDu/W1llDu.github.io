@@ -5,6 +5,7 @@ function addInput() {
   if (li.innerHTML === '') {
     alert("You must write something!");
   } else {
+    newItem.value = '';
     document.getElementById("list").appendChild(li);
   }
 }
