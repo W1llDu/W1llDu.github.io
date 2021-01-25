@@ -2,10 +2,10 @@ function addInput() {
   var newItem = document.getElementById("item");
   var li = document.createElement("li");
   li.innerHTML = newItem.value;
-  newItem.innerHTML = "";
-  if (inputValue === '') {
+  if (li.innerHTML === '') {
     alert("You must write something!");
   } else {
+    newItem.innerHTML = "";
     document.getElementById("list").appendChild(li);
   }
 }
