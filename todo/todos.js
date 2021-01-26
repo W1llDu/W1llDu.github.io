@@ -3,7 +3,9 @@ function addInput() {
   var li = document.createElement("li");
   li.innerHTML = newItem.value;
   var button = document.createElement("button");
+  button.innerHTML = "remove";
   button.onclick = function() {
+    this.parentElement.remove();
   };
   li.appendChild(button);
   if (newItem.value === "") {
