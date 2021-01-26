@@ -2,6 +2,9 @@ function addInput() {
   var newItem = document.getElementById("item");
   var li = document.createElement("li");
   li.innerHTML = newItem.value;
+  var button = document.createElement("button");
+  button.onclick = function() {
+  };
   if (newItem.value === "") {
     alert("You must write something!");
   } else {
@@ -18,3 +21,18 @@ list.addEventListener("click", function(ev) {
     ev.target.classList.toggle("checked");
   }
 }, false);
+
+function clearChecked() {
+  var checked = document.getElementsByClassName("checked");
+  for (li of checked) {
+    li.remove()
+  }
+}
+
+function clearAll() {
+  
+}
+
+function saveList() {
+  
+}
