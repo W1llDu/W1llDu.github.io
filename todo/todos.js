@@ -3,14 +3,14 @@ function addInput() {
   var li = document.createElement("li");
   li.innerHTML = newItem.value;
   li.classList.add("checkable");
-  li.addEventListener('click', function() {
-    li.classList.toggle('checked');
+  li.addEventListener("click", function() {
+    li.classList.toggle("checked");
   });
-  if (newItem.value === '') {
+  if (newItem.value === "") {
     alert("You must write something!");
   } else {
     document.getElementById("list").appendChild(li);
-    newItem.value = '';
+    newItem.value = "";
   }
 }
 
@@ -18,7 +18,7 @@ function addInput() {
 
 var listItems = document.getElementsByTagName("li");
 for (li of listItems) {
-  li.addEventListener('click', function() {
-    li.classList.toggle('checked');
+  li.addEventListener("click", function() {
+    li.classList.toggle("checked");
   });
 }
