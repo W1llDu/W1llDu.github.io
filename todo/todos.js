@@ -3,7 +3,7 @@ function addInput() {
   var li = document.createElement("li");
   li.innerHTML = newItem.value;
   li.classList.add("checkable");
-  li.addEventListener("click", function() {
+  li.onclick = function() {
     li.classList.toggle("checked");
   });
   if (newItem.value === "") {
