@@ -5,6 +5,7 @@ function addInput() {
   var button = document.createElement("button");
   button.onclick = function() {
   };
+  li.appendChild(button);
   if (newItem.value === "") {
     alert("You must write something!");
   } else {
