@@ -36,5 +36,7 @@ function clearAll() {
 }
 
 function saveList() {
-  
+  if (localStorage.getItem("visited?") != null) {
+    localStorage.setItem("visited?", "true");
+  }
 }
