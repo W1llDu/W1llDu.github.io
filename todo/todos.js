@@ -5,7 +5,7 @@ function addInput() {
   li.classList.add("checkable");
   li.onclick = function() {
     li.classList.toggle("checked");
-  });
+  };
   if (newItem.value === "") {
     alert("You must write something!");
   } else {
@@ -20,5 +20,5 @@ var listItems = document.getElementsByTagName("li");
 for (li of listItems) {
   li.onclick = function() {
     li.classList.toggle("checked");
-  });
+  };
 }
