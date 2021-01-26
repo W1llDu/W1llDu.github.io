@@ -3,6 +3,9 @@ function addInput() {
   var li = document.createElement("li");
   li.innerHTML = newItem.value;
   li.classList.add("checkable");
+  li.addEventListener('click', function() {
+    li.classList.toggle('checked');
+  });
   if (newItem.value === '') {
     alert("You must write something!");
   } else {
@@ -11,7 +14,9 @@ function addInput() {
   }
 }
 
-var listItems = document.getElementsByClassName("checkable");
+// import li from localStorage
+
+var listItems = document.getElementsByTagName("li");
 for (li of listItems) {
   li.addEventListener('click', function() {
     li.classList.toggle('checked');
