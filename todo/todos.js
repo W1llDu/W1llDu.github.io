@@ -2,7 +2,6 @@ function addInput() {
   var newItem = document.getElementById("item");
   var li = document.createElement("li");
   li.innerHTML = newItem.value;
-  li.classList.add("checkable");
   if (newItem.value === "") {
     alert("You must write something!");
   } else {
