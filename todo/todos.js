@@ -11,8 +11,8 @@ function addInput() {
   }
 }
 
-var list = document.getElementsByClassName("checkable");
-for (li in list):
+var listItems = document.getElementsByClassName("checkable");
+for (li of listItems):
   li.addEventListener('click', function() {
     li.classList.toggle('checked');
   });
