@@ -25,7 +25,7 @@ list.addEventListener("click", function(ev) {
 function clearChecked() {
   var checked = document.getElementsByClassName("checked");
   for (li of checked) {
-    li.remove()
+    li.remove();
   }
 }
 
