@@ -23,9 +23,8 @@ list.addEventListener("click", function(ev) {
 }, false);
 
 function clearChecked() {
-  var checked = document.getElementsByClassName("checked");
-  for (li of checked) {
-    li.remove();
+  while (document.getElementsByClassName("checked").length > 0) {
+    document.getElementsByClassName("checked")[0].remove();
   }
 }
 
