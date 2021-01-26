@@ -18,7 +18,7 @@ function addInput() {
 
 var listItems = document.getElementsByTagName("li");
 for (li of listItems) {
-  li.addEventListener("click", function() {
+  li.onclick = function() {
     li.classList.toggle("checked");
   });
 }
