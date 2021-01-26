@@ -30,7 +30,7 @@ function clearChecked() {
 }
 
 function clearAll() {
-  
+  document.getElementById("list").innerHTML = "";
 }
 
 function saveList() {
