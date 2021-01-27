@@ -57,10 +57,11 @@ function clearAll() {
 }
 
 function saveList() {
-  var ul = document.getElementById("list");
+  var list = document.getElementsByTagName("li");
   var toStorage = [];
-  for (li of ul) {
-    toStorage.push(li.querySelector("p").innerHTML);
+  var i;
+  for (i = 0; i < list.length; i++) {
+    toStorage.push(list[i].querySelector("p").innerHTML);
   }
   localStorage.setItem("list", JSON.stringify(toStorage));
 }
