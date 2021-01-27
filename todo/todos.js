@@ -43,6 +43,8 @@ list = document.getElementById("list");
 list.addEventListener("click", function(ev) {
   if (ev.target.tagName === "LI") {
     ev.target.classList.toggle("checked");
+  } else if (ev.target.tagName === "P") {
+    ev.target.parentElement.classList.toggle("checked");
   }
 }, false);
 
