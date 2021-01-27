@@ -37,7 +37,6 @@ function addFromStorage(v) {
   };
   li.appendChild(button);
   document.getElementById("list").appendChild(li);
-  newItem.value = "";
 }
 
 list = document.getElementById("list");
