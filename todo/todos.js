@@ -18,10 +18,28 @@ function addInput() {
   }
 }
 
-// get ul from localStorage
-// for li in ul add button
+var list = localStorage.getItem("list");
+if (list != null) {
+  list = JSON.parse(list);
+}
+list.forEach(addFromStorage);
 
-var list = document.getElementById("list");
+function addFromStorage(v) {
+  var li = document.createElement("li");
+  var p = document.createElement("p");
+  p.innerHTML = v;
+  li.appendChild(p);
+  var button = document.createElement("button");
+  button.innerHTML = "remove";
+  button.onclick = function() {
+    this.parentElement.remove();
+  };
+  li.appendChild(button);
+  document.getElementById("list").appendChild(li);
+  newItem.value = ""
+}
+
+list = document.getElementById("list");
 list.addEventListener("click", function(ev) {
   if (ev.target.tagName === "LI") {
     ev.target.classList.toggle("checked");
@@ -39,13 +57,10 @@ function clearAll() {
 }
 
 function saveList() {
-  if (localStorage.getItem("visited?") != null) {
-    var ul = document.getElementById("list");
-    var toStorage = [];
-    for (li of ul) {
-      toStorage.push(li.querySelector("p").innerHTML);
-    }
-  } else {
-    localStorage.setItem("visited?", "true");
+  var ul = document.getElementById("list");
+  var toStorage = [];
+  for (li of ul) {
+    toStorage.push(li.querySelector("p").innerHTML);
   }
+  localStorage.setItem("list", JSON.stringify(toStorage));
 }
