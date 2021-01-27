@@ -1,3 +1,7 @@
 li.checked {
   text-decoration: line-through;
 }
+
+p.checked {
+  text-decoration: line-through;
+}
