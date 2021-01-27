@@ -2,6 +2,7 @@ function addInput() {
   var newItem = document.getElementById("item");
   var li = document.createElement("li");
   var p = document.createElement("p");
+  p.width = "50%";
   p.innerHTML = newItem.value;
   li.appendChild(p);
   var button = document.createElement("button");
