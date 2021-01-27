@@ -1,7 +1,9 @@
 function addInput() {
   var newItem = document.getElementById("item");
   var li = document.createElement("li");
-  li.innerHTML = newItem.value;
+  var p = document.createElement("p");
+  p.innerHTML = newItem.value;
+  li.appendChild(p);
   var button = document.createElement("button");
   button.innerHTML = "remove";
   button.onclick = function() {
@@ -16,7 +18,8 @@ function addInput() {
   }
 }
 
-// import li from localStorage
+// get ul from localStorage
+// for li in ul add button
 
 var list = document.getElementById("list");
 list.addEventListener("click", function(ev) {
@@ -37,6 +40,12 @@ function clearAll() {
 
 function saveList() {
   if (localStorage.getItem("visited?") != null) {
+    var ul = document.getElementById("list");
+    var toStorage = [];
+    for (li of ul) {
+      toStorage.push(li.querySelector("p").innerHTML);
+    }
+  } else {
     localStorage.setItem("visited?", "true");
   }
 }
