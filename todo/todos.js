@@ -22,8 +22,8 @@ function addInput() {
 var list = localStorage.getItem("list");
 if (list != null) {
   list = JSON.parse(list);
+  list.forEach(addFromStorage);
 }
-list.forEach(addFromStorage);
 
 function addFromStorage(v) {
   var li = document.createElement("li");
