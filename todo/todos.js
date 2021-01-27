@@ -41,16 +41,14 @@ function addFromStorage(v) {
 
 list = document.getElementById("list");
 list.addEventListener("click", function(ev) {
-  if (ev.target.tagName === "LI") {
-    ev.target.classList.toggle("checked");
-  } else if (ev.target.tagName === "P") {
+  if (ev.target.tagName === "P") {
     ev.target.classList.toggle("checked");
   }
 }, false);
 
 function clearChecked() {
   while (document.getElementsByClassName("checked").length > 0) {
-    document.getElementsByClassName("checked")[0].remove();
+    document.getElementsByClassName("checked")[0].parentElement.remove();
   }
 }
 
