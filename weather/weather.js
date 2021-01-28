@@ -5,6 +5,7 @@ window.addEventListener("load", function() {
   let icon = document.getElementById("icon");
   let temp = document.getElementById("temperature");
   let ts = "C";
+  let desc = document.getElementById("desc");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
       long = position.coords.longitude;
@@ -17,6 +18,7 @@ window.addEventListener("load", function() {
         return response.json();
       })
       .then(data => {
+        console.log(data);
         const {temp_c, temp_f, location} = data.current;
         tz.innerHTML =  location.name;
         temp.innerHTML = temp_c.toString() + ts;
