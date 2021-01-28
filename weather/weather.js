@@ -25,15 +25,16 @@ window.addEventListener("load", function() {
         temp.onClick = function() {
           if (ts == "C") {
             ts = "F";
-            temp.innerHTML = temp_f.toString() + ts;
+            temp.innerHTML = temp_f.toString() + "&deg" + ts;
           } else if (ts == "F") {
             ts = "C";
-            temp.innerHTML = temp_c.toString() + ts;
+            temp.innerHTML = temp_c.toString() + "&deg" + ts;
           }
         };
         desc.innerHTML = condition.text;
         let icon = document.createElement("img");
         icon.src = condition.icon;
+        iconContainer.innerHTML = "";
         iconContainer.appendChild(icon);
       })
     });
