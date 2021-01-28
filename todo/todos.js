@@ -71,6 +71,7 @@ function saveList() {
   for (i = 0; i < list.length; i++) {
     toStorage.push(list[i].querySelector("p").innerHTML);
   }
+  localStorage.setItem("list", JSON.stringify(toStorage));
   var toStorage = [];
   var i;
   for (i = 0; i < list.length; i++) {
