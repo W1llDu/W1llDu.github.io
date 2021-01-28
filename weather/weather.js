@@ -16,7 +16,7 @@ window.addEventListener("load", function() {
         return response.json();
       })
       .then(data => {
-       
+        console.log(data);
       })
     });
   }
