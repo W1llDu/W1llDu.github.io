@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
         console.log(data);
         const {temp_c, temp_f, condition} = data.current;
         tz.innerHTML =  data.location.name;
-        temp.innerHTML = temp_c.toString() + ts;
+        temp.innerHTML = temp_c.toString() + "\u00B0" + ts;
         temp.onclick = function() {
           if (ts == "C") {
             ts = "F";
