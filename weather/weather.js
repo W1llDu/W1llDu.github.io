@@ -1,7 +1,7 @@
 window.addEventListener("load", function() {
   let long;
   let lat;
-  let tz = document.getElemetnById("timezone");
+  let tz = document.getElementById("timezone");
   let icon = document.getElementById("icon");
   let temp = document.getElementById("temperature");
   let ts = "C";
@@ -31,6 +31,7 @@ window.addEventListener("load", function() {
             temp.innerHTML = temp_c.toString() + ts;
           }
         };
+        desc.innerHTML = "";
       })
     });
   }
