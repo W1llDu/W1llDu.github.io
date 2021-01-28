@@ -1,8 +1,10 @@
 window.addEventListener("load", function() {
   let long;
   let lat;
-  let ft;
-  let ct;
+  let tz = document.getElemetnById("timezone");
+  let icon = document.getElementById("icon");
+  let temp = document.getElementById("temperature");
+  let ts = "C";
   let loc;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -16,7 +18,17 @@ window.addEventListener("load", function() {
         return response.json();
       })
       .then(data => {
-        console.log(data);
+        const {temp_c, temp_f} = data.currently;
+        temp.innerHTML = temp_c.toString() + ts;
+        temp.onClick = function() {
+          if (ts == "C") {
+            ts = "F";
+            temp.innerHTML = temp_f.toString() + ts;
+          } else if {
+            ts = "C";
+            temp.innerHTML = temp_c.toString() + ts;
+          }
+        };
       })
     });
   }
