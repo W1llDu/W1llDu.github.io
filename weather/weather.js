@@ -22,7 +22,7 @@ window.addEventListener("load", function() {
         const {temp_c, temp_f, condition} = data.current;
         tz.innerHTML =  data.location.name;
         temp.innerHTML = temp_c.toString() + ts;
-        temp.onClick = function() {
+        temp.onclick = function() {
           if (ts == "C") {
             ts = "F";
             temp.innerHTML = temp_f.toString() + "\u00B0" + ts;
