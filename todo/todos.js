@@ -20,15 +20,23 @@ function addInput() {
 }
 
 var list = localStorage.getItem("list");
+var checked = localStorage.getItem("checked");
 if (list != null) {
   list = JSON.parse(list);
-  list.forEach(addFromStorage);
+  checked = JSON.parse(checked);
+  var i;
+  for (i = 0; i < list.length; i++) {
+    addFromStorage(list[i], checked[i]);
+  }
 }
 
-function addFromStorage(v) {
+function addFromStorage(v, b) {
   var li = document.createElement("li");
   var p = document.createElement("p");
   p.innerHTML = v;
+  if (b) {
+    p.classList.add("checked");
+  }
   li.appendChild(p);
   var button = document.createElement("button");
   button.innerHTML = "remove";
@@ -63,5 +71,10 @@ function saveList() {
   for (i = 0; i < list.length; i++) {
     toStorage.push(list[i].querySelector("p").innerHTML);
   }
-  localStorage.setItem("list", JSON.stringify(toStorage));
+  var toStorage = [];
+  var i;
+  for (i = 0; i < list.length; i++) {
+    toStorage.push(list[i].querySelector("p").classList.contains("checked"));
+  }
+  localStorage.setItem("checked", JSON.stringify(toStorage));
 }
