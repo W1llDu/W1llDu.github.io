@@ -24,7 +24,7 @@ window.addEventListener("load", function() {
           if (ts == "C") {
             ts = "F";
             temp.innerHTML = temp_f.toString() + ts;
-          } else if {
+          } else if (ts == "F") {
             ts = "C";
             temp.innerHTML = temp_c.toString() + ts;
           }
