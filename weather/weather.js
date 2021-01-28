@@ -25,10 +25,10 @@ window.addEventListener("load", function() {
         temp.onClick = function() {
           if (ts == "C") {
             ts = "F";
-            temp.innerHTML = temp_f.toString() + "&deg" + ts;
+            temp.innerHTML = temp_f.toString() + "\u00B0" + ts;
           } else if (ts == "F") {
             ts = "C";
-            temp.innerHTML = temp_c.toString() + "&deg" + ts;
+            temp.innerHTML = temp_c.toString() + "\u00B0" + ts;
           }
         };
         desc.innerHTML = condition.text;
