@@ -1,11 +1,13 @@
-li.checked {
-  text-decoration: line-through;
-}
-
-p.checked {
-  text-decoration: line-through;
+li {
+  display:flex;
+  flex-direction:column;
+  flex-wrap: wrap;
 }
 
 p { 
   cursor: pointer;
+}
+
+p.checked {
+  text-decoration: line-through;
 }
