@@ -72,10 +72,10 @@ function saveList() {
     toStorage.push(list[i].querySelector("p").innerHTML);
   }
   localStorage.setItem("list", JSON.stringify(toStorage));
-  var toStorage = [];
-  var i;
-  for (i = 0; i < list.length; i++) {
-    toStorage.push(list[i].querySelector("p").classList.contains("checked"));
+  toStorage = [];
+  var j;
+  for (j = 0; j < list.length; j++) {
+    toStorage.push(list[j].querySelector("p").classList.contains("checked"));
   }
   localStorage.setItem("checked", JSON.stringify(toStorage));
 }
