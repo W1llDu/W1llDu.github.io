@@ -2,7 +2,7 @@ window.addEventListener("load", function() {
   let long;
   let lat;
   let tz = document.getElementById("timezone");
-  let icon = document.getElementById("icon");
+  let iconContainer = document.getElementById("icon");
   let temp = document.getElementById("temperature");
   let ts = "C";
   let desc = document.getElementById("desc");
@@ -19,8 +19,8 @@ window.addEventListener("load", function() {
       })
       .then(data => {
         console.log(data);
-        const {temp_c, temp_f, location} = data.current;
-        tz.innerHTML =  location.name;
+        const {temp_c, temp_f, condition} = data.current;
+        tz.innerHTML =  data.location.name;
         temp.innerHTML = temp_c.toString() + ts;
         temp.onClick = function() {
           if (ts == "C") {
@@ -31,7 +31,10 @@ window.addEventListener("load", function() {
             temp.innerHTML = temp_c.toString() + ts;
           }
         };
-        desc.innerHTML = "";
+        desc.innerHTML = condition.text;
+        let icon = document.createElement("img");
+        icon.src = condition.icon;
+        iconContainer.appendChild(icon);
       })
     });
   }
