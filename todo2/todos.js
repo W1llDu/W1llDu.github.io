@@ -44,7 +44,8 @@ function clearChecked() {
 }
 
 function clearAll() {
-  document.getElementById("list").innerHTML = "";
+  todos = [];
+  checked = [];
 }
 
 function saveList() {
