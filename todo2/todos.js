@@ -1,25 +1,42 @@
 var todos = localStorage.getItem("list");
-var checked = localStorage.getItem("checked");
 if (todos != null) {
   todos = JSON.parse(list);
-  checked = JSON.parse(checked);
 } else {
   todos = [];
-  checked = [];
 }
+updateDisplay();
 
 function addInput() {
-  todos.push(document.getElementById("item").value);
-  checked.push();
+  todos.push({value: document.getElementById("item").value, checked: false});
+  document.getElementById("item").value = "";
+  updateDisplay();
 }
 
-function addFromStorage(v, b) {
+function clearChecked() {
+  let i;
+  while (containsChecked(todos)) {
+  }
+  updateDisplay();
+}
+
+function clearAll() {
+  todos = [];
+  updateDisplay();
+}
+
+function saveList() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function updateDisplay() {
+  todos.forEach(addItem);
+}
+
+function addItem(li) {
   var li = document.createElement("li");
   var p = document.createElement("p");
-  p.innerHTML = v;
-  if (b) {
-    p.classList.add("checked");
-  }
+  p.width = "50%";
+  p.innerHTML = li.value;
   li.appendChild(p);
   var button = document.createElement("button");
   button.innerHTML = "remove";
@@ -28,27 +45,5 @@ function addFromStorage(v, b) {
   };
   li.appendChild(button);
   document.getElementById("list").appendChild(li);
-}
-
-var list = document.getElementById("list");
-list.addEventListener("click", function(ev) {
-  if (ev.target.tagName === "P") {
-    ev.target.classList.toggle("checked");
   }
-}, false);
-
-function clearChecked() {
-  while (document.getElementsByClassName("checked").length > 0) {
-    document.getElementsByClassName("checked")[0].parentElement.remove();
-  }
-}
-
-function clearAll() {
-  todos = [];
-  checked = [];
-}
-
-function saveList() {
-  localStorage.setItem("todos", JSON.stringify(todos));
-  localStorage.setItem("checked", JSON.stringify(checked));
 }
